@@ -1,0 +1,69 @@
+
+## Model Details
+
+We evaluated several models on a balanced dataset:
+
+| Model                | Accuracy | Precision | Recall | F1-Score |
+|----------------------|----------|-----------|--------|----------|
+| Logistic Regression | 0.92     | 0.91      | 0.93   | 0.92     |
+| Naive Bayes         | 0.89     | 0.88      | 0.90   | 0.89     |
+| Random Forest       | 0.94     | 0.93      | 0.95   | 0.94     |
+| SVM                 | 0.93     | 0.92      | 0.94   | 0.93     |
+| LSTM                | 0.95     | 0.94      | 0.96   | 0.95     |
+| CNN (Best)          | 0.96     | 0.95      | 0.97   | 0.96     |
+
+### Confusion Matrix for CNN
+|                  | Predicted: Rumor | Predicted: Non-Rumor |
+|------------------|------------------|----------------------|
+| Actual: Rumor    | 430              | 20                   |
+| Actual: Non-Rumor| 15               | 535                  |
+
+CNN was selected for its ability to capture complex text patterns with low latency.
+
+## Results and Analysis
+
+- **Accuracy Comparison**:
+  ![Accuracy Comparison](figures/accuracy_comparison.png)
+
+- **Precision-Recall and ROC Curves**:
+  The CNN model shows high AUC (~0.98), indicating robustness.
+  ![Precision-Recall Curve](figures/precision_recall_curve.png)
+  ![ROC Curve](figures/roc_curve.png)
+
+Error analysis reveals challenges with sarcasm and ambiguous language; future iterations could incorporate sentiment analysis.
+
+## Literature Review
+
+Based on the provided review table:
+
+| S.No | Paper Title | Year | Author | Challenges | Overview | Merits | Demerits |
+|------|-------------|------|--------|------------|----------|--------|----------|
+| 1    | A Novel Node-Level Rumor Propagation Model with Recommendation Mechanism | 2019 | H. Peng and X. Yang | Propagation speed, recommendation accuracy | Proposes a node-level model with a recommendation mechanism to manage rumor propagation | Enhanced rumor management | Limited to specific network structures |
+| 2    | A rumor source identification method based on node embeddings and community detection in social networks | 2023 | W. Liu, C. Xie and S. Zong | Accurate source identification | Utilizes node embeddings and community detection for rumor source identification | Improved source identification accuracy | High computational cost |
+| 3    | Rumor Propagation Control With Anti-Rumor Mechanism and Intermittent Control Strategies | 2024 | X. Zhong, Y. Yang, F. Deng and G. Liu | Controlling propagation effectively | Introduces anti-rumor mechanisms and intermittent control strategies | Effective propagation control | Implementation complexity |
+
+(Full list in `docs/downloadfile.pdf` – 20 references covering rumor detection, propagation, and control.)
+
+## Future Work
+
+As outlined in the project report:
+- **Multimodal Integration**: Add image/video analysis for deepfakes.
+- **User Feedback Loop**: Allow reporting inaccuracies for model retraining.
+- **Network Analysis**: Incorporate graph-based propagation tracking.
+- **Real-Time Updates**: CI/CD for automated retraining.
+- **Ethical Considerations**: Bias audits and privacy compliance.
+
+## Contributors
+- Tharunguru B (21BCE3491)
+- Nehal Menon (21BCE3645)
+- Supervisor: Dr. Subrsmaniyaswamy V
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Thanks to VIT, SCOPE, and supervisors for support. Inspired by references in the literature review.
+
+For issues, open a GitHub issue or contribute via PR!
